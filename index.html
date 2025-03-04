@@ -5,10 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shorten - welcome</title>
     <script src="./js/public.js"></script>
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Create a new account</h1>
+    <div class="logo">
+
+      
+        <img src="./assets/url-link-svgrepo-com.svg" alt="" >
+        <a href="#">URL Shortener</a>
+    </div>
+    <section class="logo-sec">
+        <img src="./assets/team.png" alt="">
+    </section>
+    <section class="form-sec">
+   
+   <div class="container register">
+        <h1>Welcome !</h1>
+        <p>Sign up to</p>
+        <p>URL Shortener</p>
         <form  id="register-form" method="post">
             <input type="text" name="name" placeholder="Name" required>
             <input type="email" name="email" placeholder="Email" required>
@@ -16,14 +30,22 @@
             <button type="submit">Register</button>
         </form>
     </div>
-    <div class="container">
-        <h1>Login</h1>
+    <div class="container login">
+        <h1>Welcome !</h1>
+        <p>Sign in to</p>
+        <p>URL Shortener</p>
         <form id="login-form" method="post">
             <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Login</button>
+            <p>Don't have any Account? <span class="Ragister-toggle" >Ragister</span>   </p>
         </form>
-    </div>
+    </div> 
+    </section>
+  
+
+
+
     <script src="./js/register.js"></script>
     <script src="./js/login.js"></script>
 </body>

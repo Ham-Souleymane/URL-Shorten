@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 10;
+}
+
+.logo img {
+    width: 30px;
+    height: 30px;
+}
+
+.logo a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form-sec {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.logo-sec {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 2rem;
+}
+
+.logo-sec img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 2.5rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.8rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.container h1 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.container p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.container form input {
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.container form input:focus {
+    outline: none;
+    border-color: #000;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.container form button {
+    background-color: #000;
+    color: #fff;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.register {
+    display: none;
+}
+
+/* Responsive Breakpoints */
+@media screen and (max-width: 1024px) {
+    body {
+        flex-direction: column;
+    }
+
+    .logo {
+        position: static;
+        justify-content: center;
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
+
+    .form-sec, 
+    .logo-sec {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .container {
+        max-width: 100%;
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 1.5rem;
+        width: 95%;
+    }
+
+    .container h1 {
+        font-size: 1.5rem;
+    }
+
+    .container form input,
+    .container form button {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .logo img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .logo a {
+        font-size: 0.9rem;
+    }
+}
+
+/* Accessibility and Small Screen Adjustments */
+@media (max-height: 700px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    body {
+        min-height: 100%;
+        height: auto;
+    }
+}
+
+/* Ensure full responsiveness */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+input, button {
+    width: 100%;
+}
+
+/* Additional touch-friendly adjustments */
+@media (pointer: coarse) {
+    .container form input,
+    .container form button {
+        min-height: 44px;
+        padding: 0.8rem 1rem;
+    }
+}
