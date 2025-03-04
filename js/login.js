@@ -38,10 +38,16 @@ loginForm.addEventListener('submit', async (e) => {
 });
 // handling register
 const registerToggle=document.querySelector('.Ragister-toggle');
+const loginToggle=document.querySelector('.login-toggle');
 const logForm=document.querySelector('.login');
 const regForm=document.querySelector('.register');
 registerToggle.addEventListener('click',()=>{
     logForm.classList.remove("active");
     regForm.classList.add('active');
+console.log('hello');
+})
+loginToggle.addEventListener('click',()=>{
+    regForm.classList.remove("active");
+    logForm.classList.add('active');
 console.log('hello');
 })
