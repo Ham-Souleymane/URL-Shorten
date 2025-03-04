@@ -1,5 +1,7 @@
 const loginForm = document.getElementById('login-form');
 
+
+
 loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -34,3 +36,12 @@ loginForm.addEventListener('submit', async (e) => {
         window.location.href = '/pages/shorten.html';
     }
 });
+// handling register
+const registerToggle=document.querySelector('.Ragister-toggle');
+const logForm=document.querySelector('.login');
+const regForm=document.querySelector('.register');
+registerToggle.addEventListener('click',()=>{
+    logForm.classList.remove("active");
+    regForm.classList.add('active');
+console.log('hello');
+})
