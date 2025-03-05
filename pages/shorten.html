@@ -21,6 +21,17 @@
         <h1>Your shortened URLs</h1>
         <div id="shorten-list"></div>
     </div>
+    <dialog id="popup">
+        <h2>Edit Shortened URL</h2>
+        <form method="dialog" id="edit-form">
+            <input type="url" name="new-URL" id="new-URL" placeholder="Enter new URL" required>
+            <div class="popup-buttons">
+                <button type="submit" id="confirm-edit">Update</button>
+                <button type="button" id="close-popup">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+    
     <script src="../js/createShortUrl.js"></script>
     <script src="../js/getShortUrls.js"></script>
 

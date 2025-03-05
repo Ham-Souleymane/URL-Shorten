@@ -139,7 +139,7 @@ h1 {
 .delete_but {
     color: #ff4d4d;
     top: 15px;
-    right: 70px;
+    right: 100px;
 }
 
 .show_but {
@@ -147,8 +147,35 @@ h1 {
     top: 15px;
     right: 20px;
 }
+.edit_but {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 15px;
+    right: 60px; 
+}
 
-.delete_but:hover, .show_but:hover {
+
+
+
+.edit_but img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+.edit_but:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: scale(1.1);
+}
+
+.delete_but:hover, .show_but:hover{
     background-color: rgba(0, 0, 0, 0.05);
     transform: scale(1.1);
 }
@@ -193,6 +220,83 @@ h1 {
     font-size: 1em;
     vertical-align: middle;
 }
+#popup {
+    width: 400px;
+    padding: 20px;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#popup::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#popup h2 {
+    color: #2c3e50;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+#popup input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #3498db;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+#popup input:focus {
+    border-color: #2980b9;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.popup-buttons button {
+    flex: 1;
+    padding: 12px;
+    margin: 5px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    
+}
+
+#confirm-edit {
+    background-color: #27ae60;
+    color: white;
+}
+
+#confirm-edit:hover {
+    background-color: #219150;
+}
+
+#close-popup {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#close-popup:hover {
+    background-color: #c0392b;
+}
+
 
 @media (max-width: 600px) {
      body {
@@ -212,21 +316,24 @@ h1 {
 
     .shorten-url {
         position: relative;
-        padding-top: 50px; /* Make space for buttons at the top */
+        padding-top: 50px;
     }
 
-    .delete_but, .show_but {
+    .delete_but, .show_but, .edit_but {
         position: absolute;
         top: 10px;
         z-index: 10;
     }
 
     .delete_but {
-        right: 70px;
+        right: 90px;
     }
 
     .show_but {
-        right: 20px;
+        right: 10px;
+    }
+    .edit_but {
+        right: 50px;
     }
 
     .logout-link {

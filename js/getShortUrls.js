@@ -49,9 +49,15 @@ const getShortUrls = async () => {
                     <button class="delete_but">
                             <img src="../assets/delete.png" alt="" >
                     </button>
+                    <button class="edit_but">
+                            <img src="../assets/edit.png" alt="" >
+                    </button>
+                    
+                    
                     <button class="show_but">
                             <img src="../assets/view.png" alt="" >
                     </button>
+
                       <div class="shorten-details" style="display: none;">
                      
 <div class="shorten-url__clicks">
@@ -89,6 +95,17 @@ const getShortUrls = async () => {
                     showImg.src='../assets/view.png';
                 }
             })
+            
+
+          const editButton=li.querySelector('.edit_but');
+        
+          editButton.addEventListener('click',()=>{
+              handleEdit(shortUrl.id);
+            
+
+
+          })
+
 
             shortenUrlList.appendChild(li);
             
@@ -125,3 +142,48 @@ getShortUrls();
 }
 
 
+async function handleEdit(id) {
+    const popup = document.getElementById("popup");
+    const inputField = document.getElementById("new-URL");
+    const confirmButton = document.getElementById("confirm-edit");
+    const closeButton = document.getElementById("close-popup");
+
+    // Clear previous input
+    inputField.value = "";
+
+    // Show the dialog
+    popup.showModal();
+
+    // Handle form submission
+    confirmButton.onclick = async () => {
+        const newUrl = inputField.value.trim();
+        if (!newUrl) {
+            alert("Please enter a valid URL.");
+            return;
+        }
+
+        const url = `https://www.shorten-url-api.infobrains.club/api/private/urls/${id}`;
+        const token = localStorage.getItem("token");
+
+        const response = await fetch(url, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify({ url: newUrl })
+        });
+
+        if (response.ok) {
+       
+            popup.close();
+            getShortUrls(); 
+        } else {
+            const res = await response.json();
+            alert(res.message);
+        }
+    };
+
+  
+    closeButton.onclick = () => popup.close();
+}
