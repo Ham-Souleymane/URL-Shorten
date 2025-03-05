@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shorten</title>
     <script src="../js/private.js"></script>
+    <link rel="stylesheet" href="../styling/main.css">
 </head>
 <body>
-    <a href="/pages/logout.html">Logout</a>
-    <div class="container">
+    <a href="/pages/logout.html"  class="logout-link">Logout</a>
+    <div class="shortinContainer">
         <h1>Create a shortcut for your URL</h1>
         <form id="shorten-form" method="post">
             <input type="url" name="url" placeholder="Enter your URL" required>
@@ -16,11 +17,12 @@
         </form>
         <div id="shorten-result"></div>
     </div>
-    <div class="container">
+    <div class="URL_container">
         <h1>Your shortened URLs</h1>
         <div id="shorten-list"></div>
     </div>
     <script src="../js/createShortUrl.js"></script>
     <script src="../js/getShortUrls.js"></script>
+
 </body>
 </html>
