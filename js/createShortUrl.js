@@ -3,7 +3,21 @@ const shortenResult = document.getElementById('shorten-result');
 
 shortenForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const url = shortenForm.querySelector('#shorten-form > input[name="url"]').value;
+    let url = shortenForm.querySelector('input[name="url"]').value.trim();
+
+    // Regular expression to validate a URL with or without protocol
+    const urlPattern = /^(https?:\/\/)?(www\.)?([a-zA-Z0-9.-]+\.[a-zA-Z]{2,})(\/[^\s]*)?$/;
+
+    // Check if the URL is valid
+    if (!urlPattern.test(url)) {
+        alert("Please enter a valid URL (e.g., google.com or https://google.com)");
+        return;
+    }
+
+    // Ensure the URL has "https://" or "http://"
+    if (!url.startsWith('http://') && !url.startsWith('https://')) {
+        url = 'https://' + url;
+    }
     const token = localStorage.getItem('token');
 
     const shortenUrl = 'https://www.shorten-url-api.infobrains.club/api/private/urls';
